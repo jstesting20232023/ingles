@@ -1,30 +1,35 @@
 body {
     font-family: Arial, sans-serif;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
     background-color: black; /* Fondo negro */
-    color: green; /* Texto verde */
+    color: white; /* Texto blanco */
     overflow: hidden;
 }
 
-.marquee {
-    width: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    box-sizing: border-box;
+.container {
+    text-align: center;
 }
 
-.marquee p {
-    display: inline-block;
-    padding-left: 100%;
-    font-size: 6em; /* Tamaño de texto ajustado al doble */
-    animation: marquee 75s linear infinite; /* Velocidad ajustada al 25% más lento */
+h1 {
+    font-size: 6em;
+    margin: 20px 0;
 }
 
-@keyframes marquee {
-    0%   { transform: translate(0, 0); }
-    100% { transform: translate(-100%, 0); }
+.time-tense {
+    margin: 40px 0;
+}
+
+h2 {
+    font-size: 4em;
+    margin: 10px 0;
+}
+
+div[id="conjugations"] {
+    font-size: 3em;
+    line-height: 1.5em;
 }
