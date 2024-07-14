@@ -16,12 +16,12 @@ body {
 }
 
 .day-of-week {
-    font-size: 1em; /* Tamaño de fuente para mostrar el día de la semana */
+    font-size: 0.5em; /* Tamaño de fuente reducido */
     margin-bottom: 10px;
 }
 
 h1 {
-    font-size: 4em; /* Tamaño de fuente para el verbo del día */
+    font-size: 2em; /* Tamaño de fuente reducido */
     margin: 10px 0;
 }
 
@@ -30,11 +30,11 @@ h1 {
 }
 
 h2 {
-    font-size: 4em; /* Tamaño de fuente para el título del tiempo verbal */
+    font-size: 2em; /* Tamaño de fuente reducido */
     margin: 10px 0;
 }
 
 div[id="conjugations"] {
-    font-size: 3em; /* Tamaño de fuente para las conjugaciones verbales */
+    font-size: 1.5em; /* Tamaño de fuente reducido */
     line-height: 1.5em;
 }
