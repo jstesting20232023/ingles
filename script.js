@@ -65,23 +65,21 @@ document.addEventListener('DOMContentLoaded', function() {
                     document.getElementById('tense-title').innerText = tense.title;
 
                     // Mostrar pronombres primero
-                    document.getElementById('conjugations').innerHTML = `
-                        <p>I:</p>
-                        <p>You:</p>
-                        <p>He/She/It:</p>
-                        <p>We:</p>
-                        <p>They:</p>
-                    `;
+                    document.getElementById('conjugations').innerHTML = 
+                        'I:<br>' +
+                        'You:<br>' +
+                        'He/She/It:<br>' +
+                        'We:<br>' +
+                        'They:<br>';
 
                     // Esperar 5 segundos antes de mostrar los verbos conjugados
                     setTimeout(function() {
-                        document.getElementById('conjugations').innerHTML = `
-                            <p>I: ${tense.conjugations.I}</p>
-                            <p>You: ${tense.conjugations.You}</p>
-                            <p>He/She/It: ${tense.conjugations['He/She/It']}</p>
-                            <p>We: ${tense.conjugations.We}</p>
-                            <p>They: ${tense.conjugations.They}</p>
-                        `;
+                        document.getElementById('conjugations').innerHTML = 
+                            'I: ' + tense.conjugations.I + '<br>' +
+                            'You: ' + tense.conjugations.You + '<br>' +
+                            'He/She/It: ' + tense.conjugations['He/She/It'] + '<br>' +
+                            'We: ' + tense.conjugations.We + '<br>' +
+                            'They: ' + tense.conjugations.They + '<br>';
                     }, 5000);
                 }
 
