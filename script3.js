@@ -3,17 +3,14 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Obtener el día de la semana actual
     var today = new Date();
-    var dayOfWeek = today.getDay();
-    var currentDay = daysOfWeek[dayOfWeek];
+    var dayOfWeekIndex = today.getDay();
+    var currentDay = daysOfWeek[dayOfWeekIndex];
+
+    // Mostrar el día de la semana actual en el HTML
+    document.getElementById('dayOfWeek').innerText = 'Day: ' + currentDay;
 
     // URL base para los verbos individuales
     var verbosBaseUrl = 'https://raw.githubusercontent.com/jstesting20232023/ingles/main/verbs/';
-
-    // Elementos HTML a los que queremos actualizar
-    var dayOfWeekElem = document.getElementById('dayOfWeek');
-    var infinitiveElem = document.getElementById('infinitive');
-    var tenseTitleElem = document.getElementById('tense-title');
-    var conjugationsElem = document.getElementById('conjugations');
 
     // Función para realizar una solicitud XMLHttpRequest
     function makeRequest(method, url, callback) {
@@ -31,15 +28,15 @@ document.addEventListener('DOMContentLoaded', function() {
         xhr.send();
     }
 
-    // Función para cargar y mostrar un verbo aleatorio del JSON
+    // Función para cargar y mostrar un verbo del JSON
     function loadVerbOfTheDay() {
         // Fetch del plan semanal usando XMLHttpRequest
         makeRequest('GET', 'https://raw.githubusercontent.com/jstesting20232023/ingles/main/weekly-plan.json', function(error, response) {
             if (error) {
                 console.error('Error al cargar el archivo JSON del plan semanal:', error);
-                infinitiveElem.textContent = 'Error al cargar el plan semanal';
-                tenseTitleElem.textContent = '';
-                conjugationsElem.textContent = '';
+                document.getElementById('infinitive').innerText = 'Error al cargar el plan semanal';
+                document.getElementById('tense-title').innerText = '';
+                document.getElementById('conjugations').innerText = '';
                 return;
             }
 
@@ -53,24 +50,40 @@ document.addEventListener('DOMContentLoaded', function() {
             makeRequest('GET', url, function(error, response) {
                 if (error) {
                     console.error('Error al cargar el archivo JSON del verbo:', error);
-                    infinitiveElem.textContent = 'Error al cargar los datos';
-                    tenseTitleElem.textContent = '';
-                    conjugationsElem.textContent = '';
+                    document.getElementById('infinitive').innerText = 'Error al cargar los datos';
+                    document.getElementById('tense-title').innerText = '';
+                    document.getElementById('conjugations').innerText = '';
                     return;
                 }
 
                 var verbo = JSON.parse(response);
                 var infinitiveText = verbo.infinitive;
-                infinitiveElem.textContent = infinitiveText;
+                document.getElementById('infinitive').innerText = infinitiveText;
 
-                // Mostrar pronombres
-                conjugationsElem.innerHTML = `
-                    <p>I: </p>
-                    <p>You: </p>
-                    <p>He/She/It: </p>
-                    <p>We: </p>
-                    <p>They: </p>
-                `;
+                // Función para mostrar pronombres y luego verbos conjugados
+                function showConjugations(tense) {
+                    document.getElementById('tense-title').innerText = tense.title;
+
+                    // Mostrar pronombres primero
+                    document.getElementById('conjugations').innerHTML = `
+                        <p>I:</p>
+                        <p>You:</p>
+                        <p>He/She/It:</p>
+                        <p>We:</p>
+                        <p>They:</p>
+                    `;
+
+                    // Esperar 5 segundos antes de mostrar los verbos conjugados
+                    setTimeout(function() {
+                        document.getElementById('conjugations').innerHTML = `
+                            <p>I: ${tense.conjugations.I}</p>
+                            <p>You: ${tense.conjugations.You}</p>
+                            <p>He/She/It: ${tense.conjugations['He/She/It']}</p>
+                            <p>We: ${tense.conjugations.We}</p>
+                            <p>They: ${tense.conjugations.They}</p>
+                        `;
+                    }, 5000);
+                }
 
                 // Array de tiempos verbales a mostrar
                 var tenses = [
@@ -81,53 +94,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 var currentIndex = 0;
 
-                // Función para cambiar entre tiempos verbales
-                function changeTense() {
+                // Función para cambiar entre tiempos verbales cada 10 segundos
+                function displayTense() {
                     var tense = tenses[currentIndex];
-                    tenseTitleElem.textContent = tense.title;
-
-                    // Mostrar solo los pronombres durante 5 segundos
-                    conjugationsElem.innerHTML = `
-                        <p>I: </p>
-                        <p>You: </p>
-                        <p>He/She/It: </p>
-                        <p>We: </p>
-                        <p>They: </p>
-                    `;
-
-                    // Después de 5 segundos, mostrar los verbos conjugados
-                    setTimeout(function() {
-                        conjugationsElem.innerHTML = `
-                            <p>I: ${tense.conjugations.I}</p>
-                            <p>You: ${tense.conjugations.You}</p>
-                            <p>He/She/It: ${tense.conjugations['He/She/It']}</p>
-                            <p>We: ${tense.conjugations.We}</p>
-                            <p>They: ${tense.conjugations.They}</p>
-                        `;
-                    }, 5000);
-
+                    showConjugations(tense);
                     currentIndex = (currentIndex + 1) % tenses.length;
                 }
 
                 // Mostrar el primer tiempo verbal
-                changeTense();
+                displayTense();
 
                 // Cambiar cada 10 segundos
-                setInterval(function() {
-                    changeTense();
-                }, 10000);
+                setInterval(displayTense, 10000);
 
-                dayOfWeekElem.textContent = 'Day: ' + currentDay;
+                // Mostrar contenido después de cargar
+                document.getElementById('dayOfWeek').style.display = 'block';
+                document.getElementById('infinitive').style.display = 'block';
+                document.getElementById('tense-title').style.display = 'block';
+                document.getElementById('conjugations').style.display = 'block';
             });
         });
     }
 
     // Llamar a la función para cargar el verbo del día
     loadVerbOfTheDay();
-
-    // Mostrar "Loading..." mientras se cargan los datos
-    dayOfWeekElem.textContent = 'Loading...';
-    infinitiveElem.textContent = 'Loading...';
-    tenseTitleElem.textContent = 'Loading...';
-    conjugationsElem.textContent = 'Loading...';
 });
