@@ -1,0 +1,26 @@
+{
+  "infinitive": "swim",
+  "conjugations": {
+    "present": {
+      "I": "swim",
+      "You": "swim",
+      "He/She/It": "swims",
+      "We": "swim",
+      "They": "swim"
+    },
+    "past": {
+      "I": "swam",
+      "You": "swam",
+      "He/She/It": "swam",
+      "We": "swam",
+      "They": "swam"
+    },
+    "presentPerfect": {
+      "I": "have swum",
+      "You": "have swum",
+      "He/She/It": "has swum",
+      "We": "have swum",
+      "They": "have swum"
+    }
+  }
+}
