@@ -1,0 +1,26 @@
+{
+  "infinitive": "rest",
+  "conjugations": {
+    "present": {
+      "I": "rest",
+      "You": "rest",
+      "He/She/It": "rests",
+      "We": "rest",
+      "They": "rest"
+    },
+    "past": {
+      "I": "rested",
+      "You": "rested",
+      "He/She/It": "rested",
+      "We": "rested",
+      "They": "rested"
+    },
+    "presentPerfect": {
+      "I": "have rested",
+      "You": "have rested",
+      "He/She/It": "has rested",
+      "We": "have rested",
+      "They": "have rested"
+    }
+  }
+}
