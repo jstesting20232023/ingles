@@ -15,18 +15,13 @@ body {
     width: 100%; /* Asegurar que el contenedor tome todo el ancho */
 }
 
-.day-of-week, h1, .time-tense, h2, div[id="conjugations"] {
-    width: 100%; /* Asegurar que cada elemento tome todo el ancho */
-    text-align: center; /* Asegurar que el texto esté centrado */
-}
-
 .day-of-week {
-    font-size: 1em; /* Tamaño de fuente aumentado en un 100% */
+    font-size: 0.5em; /* Corresponde al día de la semana */
     margin-bottom: 10px;
 }
 
 h1 {
-    font-size: 3em; /* Tamaño de fuente aumentado en un 100% */
+    font-size: 2em; /* Corresponde al verbo en infinitivo */
     margin: 10px 0;
 }
 
@@ -35,11 +30,11 @@ h1 {
 }
 
 h2 {
-    font-size: 2.5em; /* Tamaño de fuente aumentado en un 100% */
+    font-size: 2em; /* Corresponde al título del tiempo verbal */
     margin: 10px 0;
 }
 
 div[id="conjugations"] {
-    font-size: 2.5em; /* Tamaño de fuente aumentado en un 100% */
+    font-size: 1.5em; /* Corresponde a las conjugaciones verbales */
     line-height: 1.5em;
 }
