@@ -1,0 +1,27 @@
+[
+  {
+    "infinitive": "run",
+    "present": "run",
+    "past": "ran",
+    "presentPerfect": "run"
+  },
+  {
+    "infinitive": "eat",
+    "present": "eat",
+    "past": "ate",
+    "presentPerfect": "eaten"
+  },
+  {
+    "infinitive": "write",
+    "present": "write",
+    "past": "wrote",
+    "presentPerfect": "written"
+  },
+  {
+    "infinitive": "drink",
+    "present": "drink",
+    "past": "drank",
+    "presentPerfect": "drunk"
+  }
+  // Agrega más verbos según sea necesario
+]
