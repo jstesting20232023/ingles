@@ -21,12 +21,12 @@ body {
 }
 
 .day-of-week {
-    font-size: 0.375em; /* Tamaño de fuente aumentado en un 50% */
+    font-size: 1em; /* Tamaño de fuente aumentado en un 100% */
     margin-bottom: 10px;
 }
 
 h1 {
-    font-size: 1.5em; /* Tamaño de fuente aumentado en un 50% */
+    font-size: 3em; /* Tamaño de fuente aumentado en un 100% */
     margin: 10px 0;
 }
 
@@ -35,11 +35,11 @@ h1 {
 }
 
 h2 {
-    font-size: 1.5em; /* Tamaño de fuente aumentado en un 50% */
+    font-size: 3em; /* Tamaño de fuente aumentado en un 100% */
     margin: 10px 0;
 }
 
 div[id="conjugations"] {
-    font-size: 1.125em; /* Tamaño de fuente aumentado en un 50% */
+    font-size: 3em; /* Tamaño de fuente aumentado en un 100% */
     line-height: 1.5em;
 }
