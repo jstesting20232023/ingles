@@ -1,0 +1,26 @@
+{
+  "infinitive": "run",
+  "conjugations": {
+    "present": {
+      "I": "run",
+      "You": "run",
+      "He/She/It": "runs",
+      "We": "run",
+      "They": "run"
+    },
+    "past": {
+      "I": "ran",
+      "You": "ran",
+      "He/She/It": "ran",
+      "We": "ran",
+      "They": "ran"
+    },
+    "presentPerfect": {
+      "I": "have run",
+      "You": "have run",
+      "He/She/It": "has run",
+      "We": "have run",
+      "They": "have run"
+    }
+  }
+}
