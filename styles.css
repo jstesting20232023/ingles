@@ -1,7 +1,6 @@
 body {
     font-family: Arial, sans-serif;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -13,15 +12,21 @@ body {
 
 .container {
     text-align: center;
+    width: 100%; /* Asegurar que el contenedor tome todo el ancho */
+}
+
+.day-of-week, h1, .time-tense, h2, div[id="conjugations"] {
+    width: 100%; /* Asegurar que cada elemento tome todo el ancho */
+    text-align: center; /* Asegurar que el texto esté centrado */
 }
 
 .day-of-week {
-    font-size: 0.25em; /* Tamaño de fuente aún más reducido */
+    font-size: 0.25em; /* Tamaño de fuente reducido */
     margin-bottom: 10px;
 }
 
 h1 {
-    font-size: 1em; /* Tamaño de fuente aún más reducido */
+    font-size: 1em; /* Tamaño de fuente reducido */
     margin: 10px 0;
 }
 
@@ -30,11 +35,11 @@ h1 {
 }
 
 h2 {
-    font-size: 1em; /* Tamaño de fuente aún más reducido */
+    font-size: 1em; /* Tamaño de fuente reducido */
     margin: 10px 0;
 }
 
 div[id="conjugations"] {
-    font-size: 0.75em; /* Tamaño de fuente aún más reducido */
+    font-size: 0.75em; /* Tamaño de fuente reducido */
     line-height: 1.5em;
 }
