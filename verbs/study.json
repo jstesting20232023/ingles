@@ -1,0 +1,26 @@
+{
+  "infinitive": "study",
+  "conjugations": {
+    "present": {
+      "I": "study",
+      "You": "study",
+      "He/She/It": "studies",
+      "We": "study",
+      "They": "study"
+    },
+    "past": {
+      "I": "studied",
+      "You": "studied",
+      "He/She/It": "studied",
+      "We": "studied",
+      "They": "studied"
+    },
+    "presentPerfect": {
+      "I": "have studied",
+      "You": "have studied",
+      "He/She/It": "has studied",
+      "We": "have studied",
+      "They": "have studied"
+    }
+  }
+}
