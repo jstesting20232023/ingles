@@ -124,4 +124,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Llamar a la función para cargar el verbo del día
     loadVerbOfTheDay();
+
+    // Mostrar "Loading..." mientras se cargan los datos
+    dayOfWeekElem.textContent = 'Loading...';
+    infinitiveElem.textContent = 'Loading...';
+    tenseTitleElem.textContent = 'Loading...';
+    conjugationsElem.textContent = 'Loading...';
 });
