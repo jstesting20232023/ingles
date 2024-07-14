@@ -10,14 +10,14 @@ document.addEventListener('DOMContentLoaded', function() {
     var verbosBaseUrl = 'https://raw.githubusercontent.com/jstesting20232023/ingles/main/verbs/';
 
     // Elementos HTML a los que queremos actualizar
-    const dayOfWeekElem = document.getElementById('dayOfWeek');
-    const infinitiveElem = document.getElementById('infinitive');
-    const tenseTitleElem = document.getElementById('tense-title');
-    const conjugationsElem = document.getElementById('conjugations');
+    var dayOfWeekElem = document.getElementById('dayOfWeek');
+    var infinitiveElem = document.getElementById('infinitive');
+    var tenseTitleElem = document.getElementById('tense-title');
+    var conjugationsElem = document.getElementById('conjugations');
 
     // Función para cargar y mostrar un verbo aleatorio del JSON
     function loadVerbOfTheDay() {
-        // Fetch del plan semanal
+        // Fetch del plan semanal usando XMLHttpRequest
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function() {
             if (xhr.readyState === 4) {
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     // Construir la URL del archivo JSON del verbo seleccionado
                     var url = verbosBaseUrl + selectedVerb + '.json';
 
-                    // Fetch del JSON del verbo seleccionado
+                    // Fetch del JSON del verbo seleccionado usando XMLHttpRequest
                     var xhrVerb = new XMLHttpRequest();
                     xhrVerb.onreadystatechange = function() {
                         if (xhrVerb.readyState === 4) {
