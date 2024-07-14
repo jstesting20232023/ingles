@@ -1,0 +1,26 @@
+{
+  "infinitive": "write",
+  "conjugations": {
+    "present": {
+      "I": "write",
+      "You": "write",
+      "He/She/It": "writes",
+      "We": "write",
+      "They": "write"
+    },
+    "past": {
+      "I": "wrote",
+      "You": "wrote",
+      "He/She/It": "wrote",
+      "We": "wrote",
+      "They": "wrote"
+    },
+    "presentPerfect": {
+      "I": "have written",
+      "You": "have written",
+      "He/She/It": "has written",
+      "We": "have written",
+      "They": "have written"
+    }
+  }
+}
